@@ -8,6 +8,7 @@ package UI;
 import Model.Address;
 import Model.Contact;
 import Model.Person;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -122,6 +123,18 @@ public class Frontend extends javax.swing.JFrame {
 
         jLabel11.setText("Zip Code");
 
+        fieldFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldFirstNameActionPerformed(evt);
+            }
+        });
+
+        fieldPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldPhoneKeyTyped(evt);
+            }
+        });
+
         fieldApt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldAptActionPerformed(evt);
@@ -157,6 +170,11 @@ public class Frontend extends javax.swing.JFrame {
         fieldOfficePhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldOfficePhoneActionPerformed(evt);
+            }
+        });
+        fieldOfficePhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fieldOfficePhoneKeyTyped(evt);
             }
         });
 
@@ -392,6 +410,7 @@ public class Frontend extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
         String firstname = fieldFirstName.getText();
         String lastname = fieldLastName.getText();   
         String colgName = fieldColgName.getText();
@@ -442,6 +461,7 @@ public class Frontend extends javax.swing.JFrame {
         officeContact.setPhone_number(officePhone);
         
         display();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void fieldAptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldAptActionPerformed
@@ -451,6 +471,30 @@ public class Frontend extends javax.swing.JFrame {
     private void fieldOfficePhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldOfficePhoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldOfficePhoneActionPerformed
+
+    private void fieldPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldPhoneKeyTyped
+        // TODO add your handling code here:
+        
+        char c =  evt.getKeyChar();
+        
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_fieldPhoneKeyTyped
+
+    private void fieldOfficePhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldOfficePhoneKeyTyped
+        // TODO add your handling code here:
+        
+        char c =  evt.getKeyChar();
+        
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_fieldOfficePhoneKeyTyped
+
+    private void fieldFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldFirstNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldFirstNameActionPerformed
 
     private void display() {
         viewFirstName.setText(this.person.getFirstname());

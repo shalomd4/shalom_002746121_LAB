@@ -299,6 +299,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="fieldFirstName">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fieldFirstNameActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="fieldLastName">
             </Component>
@@ -307,6 +310,9 @@
             <Component class="javax.swing.JTextField" name="fieldNUID">
             </Component>
             <Component class="javax.swing.JTextField" name="fieldPhone">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldPhoneKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="fieldEmail">
             </Component>
@@ -393,6 +399,7 @@
             <Component class="javax.swing.JTextField" name="fieldOfficePhone">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fieldOfficePhoneActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="fieldOfficePhoneKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
